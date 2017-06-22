@@ -31,6 +31,8 @@
 */
 
 #include "rtpconfig.h"
+#include "windows.h"
+#include "winbase.h"
 #include "rtptimeutilities.h"
 #ifdef RTPDEBUG
 	#include <iostream>

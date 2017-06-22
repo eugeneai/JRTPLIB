@@ -1,4 +1,6 @@
 #include "rtpconfig.h"
 
+#ifndef RTP_PREFER_NETINET
 ${RTP_WINSOCK_HEADERS}
+#endif // RTP_PREFER_NETINET
 ${RTP_INTTYPE_HEADERS}

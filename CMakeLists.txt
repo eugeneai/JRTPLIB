@@ -52,6 +52,12 @@ jrtplib_include_test(sys/filio.h RTP_HAVE_SYS_FILIO "// Don't have <sys/filio.h>
 jrtplib_include_test(sys/sockio.h RTP_HAVE_SYS_SOCKIO "// Don't have <sys/sockio.h>")
 jrtplib_include_test(ifaddrs.h RTP_SUPPORT_IFADDRS "// No ifaddrs support")
 jrtplib_include_test(netinet/in.h RTP_SUPPORT_NETINET_IN "// Don't have <netinet/in.h>")
+jrtplib_include_test(winsock2.h RTP_SUPPORT_WINSOCK2 "// Don't have <winsock2.h>")
+
+if (RTP_SUPPORT_WINSOCK2 AND RTP_SUPPORT_NETINET_IN)
+	# message("A BAD THING CAN HAPPEN!")
+	set (RTP_PREFER_NETINET "#define RTP_PREFER_NETINET")
+endif ()
 
 if (JTHREAD_FOUND)
 	set(V "ON")
